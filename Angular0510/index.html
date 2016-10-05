@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app="SampleApp">
+<head>
+<title>Template directves</title>
+<script src="angular-1.5.8/angular.js"></script>
+ <link href="bootstrap.css" rel="stylesheet">
+  <link href="bootstrap-theme.css" rel="stylesheet">
+<script>
+var app = angular.module("SampleApp",[]);
+app.controller("SampleAppCtrl", function ($scope) {
+$scope.items = [{  name: "item 1", value: "value 1"},
+{ name: "item 2", value: "value 2"},
+{ name: "item 3", value: "value 3"}];
+});
+</script>
+</head>
+<body>
+<div ng-controller="SampleAppCtrl">
+<h3 class="panel-header">Items</h3>
+
+<table class="table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="item in items">
+<td>{{item.name}}</td>
+<td>{{item.value}}</td>
+        </tr>
+      </tbody>
+	</table>
+  </div>
+</body>
+</html>
